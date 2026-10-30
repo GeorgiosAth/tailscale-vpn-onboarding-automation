@@ -1,0 +1,13 @@
+# Local secrets
+.env
+.env.*
+!.env.example
+*auth-key*
+*.key
+
+# Compiled executables
+*.exe
+
+# Temporary files
+*.tmp
+*.log
