@@ -1,8 +1,8 @@
-\# Implementation Guide
+# Implementation Guide
 
 
 
-\## 1. Project Objective
+## 1. Project Objective
 
 
 
@@ -18,7 +18,7 @@ The tool combines Windows system administration, Tailscale CLI operations, graph
 
 
 
-\## 2. Operating Environment
+## 2. Operating Environment
 
 
 
@@ -44,7 +44,7 @@ Administrator privileges are required for the intended provisioning workflow.
 
 
 
-\## 3. Implementation Workflow
+## 3. Implementation Workflow
 
 
 
@@ -52,7 +52,7 @@ The enrollment process follows these stages:
 
 
 
-\### Stage 1 — Administrator Privilege Verification
+### Stage 1 — Administrator Privilege Verification
 
 
 
@@ -68,7 +68,7 @@ This prevents attempting privileged operations from an unsuitable execution cont
 
 
 
-\### Stage 2 — Tailscale Installation and Service Checks
+### Stage 2 — Tailscale Installation and Service Checks
 
 
 
@@ -84,7 +84,7 @@ This reduces the number of manual preparation steps required from the IT adminis
 
 
 
-\### Stage 3 — Existing Connection Detection
+### Stage 3 — Existing Connection Detection
 
 
 
@@ -100,7 +100,7 @@ The tool uses Tailscale CLI output to inspect the connection state.
 
 
 
-\### Stage 4 — Authentication Key Input
+### Stage 4 — Authentication Key Input
 
 
 
@@ -124,7 +124,7 @@ This approach replaces the original embedded authentication-key configuration.
 
 
 
-\### Stage 5 — Tailscale Enrollment
+### Stage 5 — Tailscale Enrollment
 
 
 
@@ -144,7 +144,7 @@ The temporary file is a security-sensitive implementation detail and requires ap
 
 
 
-\### Stage 6 — Connection Monitoring
+### Stage 6 — Connection Monitoring
 
 
 
@@ -164,7 +164,7 @@ A reported running state is useful connection information, but it should not be 
 
 
 
-\### Stage 7 — Result Reporting
+### Stage 7 — Result Reporting
 
 
 
@@ -180,7 +180,7 @@ The result should be interpreted in conjunction with the Tailscale administrator
 
 
 
-\## 4. Authentication and Security Considerations
+## 4. Authentication and Security Considerations
 
 
 
@@ -216,7 +216,7 @@ The current version is a practical automation implementation rather than a compr
 
 
 
-\## 5. Validation Performed
+## 5. Validation Performed
 
 
 
@@ -242,7 +242,7 @@ These checks validate the dialog and source structure, but they do not constitut
 
 
 
-\## 6. Known Limitations
+## 6. Known Limitations
 
 
 
@@ -258,7 +258,7 @@ These checks validate the dialog and source structure, but they do not constitut
 
 
 
-\## 7. Future Improvements
+## 7. Future Improvements
 
 
 
@@ -278,7 +278,7 @@ Potential next steps include:
 
 
 
-\## 8. Conclusion
+## 8. Conclusion
 
 
 

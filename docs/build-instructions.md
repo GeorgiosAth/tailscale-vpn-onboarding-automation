@@ -1,8 +1,8 @@
-\# Build Instructions — PowerShell to Windows EXE
+# Build Instructions — PowerShell to Windows EXE
 
 
 
-\## 1. Overview
+## 1. Overview
 
 
 
@@ -18,7 +18,7 @@ PS2EXE packages the PowerShell script into an executable wrapper. It does not pr
 
 
 
-\## 2. Prerequisites
+## 2. Prerequisites
 
 
 
@@ -40,7 +40,7 @@ The target workstation must have the Tailscale client installed for the onboardi
 
 
 
-\## 3. Project Directory
+## 3. Project Directory
 
 
 
@@ -78,7 +78,7 @@ The `dist` folder contains generated output and should not be committed to the r
 
 
 
-\## 4. Prepare the PowerShell Session
+## 4. Prepare the PowerShell Session
 
 
 
@@ -102,7 +102,7 @@ Use it only in an appropriately authorized environment. Organizational policies 
 
 
 
-\## 5. Install PS2EXE
+## 5. Install PS2EXE
 
 
 
@@ -126,7 +126,7 @@ Review module trust and publisher information before installation.
 
 
 
-\## 6. Create the Output Directory
+## 6. Create the Output Directory
 
 
 
@@ -146,7 +146,7 @@ The `-Force` parameter allows the command to work when the folder already exists
 
 
 
-\## 7. Build the Executable
+## 7. Build the Executable
 
 
 
@@ -174,7 +174,7 @@ Invoke-ps2exe `
 
 
 
-\### Build Parameters
+### Build Parameters
 
 
 
@@ -196,7 +196,7 @@ Invoke-ps2exe `
 
 
 
-\## 8. Verify the Build Output
+## 8. Verify the Build Output
 
 
 
@@ -216,7 +216,7 @@ An output of `True` confirms that a file exists at the expected location. It doe
 
 
 
-\## 9. Testing Requirements
+## 9. Testing Requirements
 
 
 
@@ -244,7 +244,7 @@ The updated runtime authentication-input version has passed initial dialog tests
 
 
 
-\## 10. Security Considerations
+## 10. Security Considerations
 
 
 
@@ -268,7 +268,7 @@ The current source handles authentication material temporarily during enrollment
 
 
 
-\## 11. Version Control
+## 11. Version Control
 
 
 
@@ -280,7 +280,7 @@ Before committing changes, inspect the staged files and confirm that no credenti
 
 
 
-\## 12. Conclusion
+## 12. Conclusion
 
 
 

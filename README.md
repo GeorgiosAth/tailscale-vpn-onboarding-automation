@@ -1,8 +1,8 @@
-\# Tailscale VPN Device Onboarding Automation with PowerShell
+# Tailscale VPN Device Onboarding Automation with PowerShell
 
 
 
-\## Overview
+## Overview
 
 
 
@@ -22,7 +22,7 @@ The solution streamlines the enrollment process through a Windows-based utility 
 
 
 
-\## Technologies
+## Technologies
 
 
 
@@ -42,7 +42,7 @@ The solution streamlines the enrollment process through a Windows-based utility 
 
 
 
-\## Problem
+## Problem
 
 
 
@@ -70,7 +70,7 @@ The objective was to develop a lightweight utility that would:
 
 
 
-\## Solution
+## Solution
 
 
 
@@ -106,7 +106,7 @@ The application uses the Windows computer name as the default Tailscale device h
 
 
 
-\## Authentication Key Handling
+## Authentication Key Handling
 
 
 
@@ -130,7 +130,7 @@ The Auth Key is handled temporarily during enrollment and is not stored as a con
 
 
 
-\## Validation
+## Validation
 
 
 
@@ -160,7 +160,7 @@ The tool's original production workflow was used operationally, while the update
 
 
 
-\## Project Structure
+## Project Structure
 
 
 
@@ -186,7 +186,7 @@ tailscale-vpn-onboarding-automation/
 
 
 
-\## Source Code
+## Source Code
 
 
 
@@ -202,7 +202,7 @@ The script is provided as a technical example and requires a valid Tailscale env
 
 
 
-\## Documentation
+## Documentation
 
 
 
@@ -212,7 +212,7 @@ The script is provided as a technical example and requires a valid Tailscale env
 
 
 
-\## Security \& Confidentiality
+## Security \& Confidentiality
 
 
 
@@ -224,7 +224,7 @@ The published source is a sanitized portfolio version intended to demonstrate Po
 
 
 
-\## Future Improvements
+## Future Improvements
 
 
 
@@ -240,7 +240,7 @@ The published source is a sanitized portfolio version intended to demonstrate Po
 
 
 
-\## Key Takeaway
+## Key Takeaway
 
 
 
