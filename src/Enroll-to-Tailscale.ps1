@@ -27,8 +27,9 @@ $ErrorActionPreference = "Stop"
 # CONFIGURATION
 # =========================
 
-# Replace this placeholder with your reusable Tailscale auth key.
-$AuthKey = "YOUR_TAILSCALE_AYTH_KEY"
+# The administrator provides the auth key at runtime.
+# No auth key is embedded in the source code or compiled executable.
+$AuthKey = $null
 
 # Keep false for normal provisioning.
 # Set true only when the laptop is already signed into another tailnet and you
@@ -46,6 +47,47 @@ $DeviceHostname = $env:COMPUTERNAME
 # =========================
 
 Add-Type -AssemblyName System.Windows.Forms
+
+
+function Read-TailscaleAuthKey {
+    $form = New-Object System.Windows.Forms.Form
+    $form.Text = "Tailscale VPN Enrollment"
+    $form.Size = New-Object System.Drawing.Size(420, 170)
+    $form.StartPosition = "CenterScreen"
+    $form.FormBorderStyle = "FixedDialog"
+    $form.MaximizeBox = $false
+    $form.MinimizeBox = $false
+
+    $label = New-Object System.Windows.Forms.Label
+    $label.Text = "Enter the Tailscale Auth Key:"
+    $label.Location = New-Object System.Drawing.Point(20, 20)
+    $label.AutoSize = $true
+    $form.Controls.Add($label)
+
+    $inputBox = New-Object System.Windows.Forms.TextBox
+    $inputBox.Location = New-Object System.Drawing.Point(20, 50)
+    $inputBox.Width = 365
+    $inputBox.UseSystemPasswordChar = $true
+    $form.Controls.Add($inputBox)
+
+    $button = New-Object System.Windows.Forms.Button
+    $button.Text = "Connect"
+    $button.Location = New-Object System.Drawing.Point(155, 85)
+    $button.DialogResult = [System.Windows.Forms.DialogResult]::OK
+    $form.Controls.Add($button)
+    $form.AcceptButton = $button
+
+    $result = $form.ShowDialog()
+
+    if ($result -eq [System.Windows.Forms.DialogResult]::OK) {
+        return $inputBox.Text.Trim()
+    }
+
+    return $null
+}
+
+
+
 
 function Show-Dialog {
     param(
@@ -217,16 +259,16 @@ try {
         exit 1
     }
 
+    $AuthKey = Read-TailscaleAuthKey
+
     if (
         [string]::IsNullOrWhiteSpace($AuthKey) -or
-        $AuthKey -eq "tskey-auth-REPLACE_WITH_YOUR_KEY" -or
         $AuthKey -notmatch "^tskey-auth-"
     ) {
         Show-Dialog `
             -Message (
-                "No valid Tailscale auth key is configured.`n`n" +
-                "Edit the script and replace the AuthKey placeholder before " +
-                "creating the EXE."
+                "Invalid or missing Tailscale Auth Key.`n`n" +
+                "They key must start with 'tskey-auth-'."
             ) `
             -Icon ([System.Windows.Forms.MessageBoxIcon]::Error)
 
